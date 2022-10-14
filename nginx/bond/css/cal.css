@@ -1,0 +1,283 @@
+#graph-chart {
+
+    width: 100%;
+    margin-top: 0px;  
+    padding-top: 6px;
+    margin-left: -15px;
+    
+    }
+
+.loancalc-outer{width: 100%; height: auto; padding: 75px 0; display: table;  background: #004CB2;overflow: hidden;}
+#loan-container{color: #fff;
+    text-align:left;
+    width: 100%; height: auto; display: table;
+    box-sizing: border-box; background: #004CB2; padding: 45px 45px 0 45px;
+}
+.loancalc-outer .title-sec{width: 100%; height: auto; padding-bottom: 30px;}
+.loancalc-outer .title-sec h2{font-size: 33px; line-height: 1; color: #fff; text-transform: uppercase; font-family: "GothamMedium" !important;}
+.loancalc-outer .title-sec p{font-size: 15px; line-height: 1; color: #fff; }
+.loancalc-outer .top-cntsec{width: 100%;   max-width: 1110px; height: auto; display: flex;  position: relative; z-index: 10; }
+.loancalc-outer .left-sec{width: 100%; height: auto; float: left; padding-right: 10px; margin-right: 35px;}
+.loancalc-outer .right-sec{width: 100%; height: auto; float: left; padding-left: 70px;position: relative;}
+.loancalc-outer .right-sec::before{content:""; width: 1px; display: block; height: 55%; background: #d29e77; position: absolute; left: 0; top:0; z-index: 5;}
+.loancalc-outer .container-fluid{overflow: hidden; background: #004CB2;}
+.loancalc-outer .bottom-sec{width: 132%; margin-left: -12%; position: relative; z-index: 5; height: auto; clear: both; padding-top: 20px; margin-top: -220px;}
+.loancalc-outer .labeltitle{font-size: 20px; line-height: 1; color: #fff; font-family: "GothamMedium" !important;}
+.loancalc-outer .right-sec .labeltitle{ margin-left: -30px; }
+.loancalc-outer .in-total{position: relative; font-size: 18px; line-height: 1; color: #fff; position: relative; margin-bottom: 20px;}
+.loancalc-outer .in-total::before{content:""; width: 18px; border-radius: 100%; height: 18px; background: #fff; position: absolute; left: -30px; top: 0;}
+.loancalc-outer  .noUi-horizontal .noUi-handle {
+    width: 25px;
+    height: 25px;
+    left: -17px;
+    top: -11px;
+    border-radius: 100%;
+    -webkit-box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.23);
+    -moz-box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.23);
+    box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.23);
+}
+.loancalc-outer .noUi-active {
+    -webkit-box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.23);
+    -moz-box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.23);
+    box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.23);
+    border:none !important
+  }
+  .loancalc-outer .noUi-tooltip {
+    display: block;
+    position: absolute;
+    border: none !important;
+    border-radius: 3px;
+    background: none;
+    padding: 5px;
+    text-align: center;
+    white-space: nowrap;
+  
+  }
+
+
+
+
+.loancalc-outer .noUi-horizontal {
+    height: 5px; border-radius: 0 !important;
+}
+.loancalc-outer .labeltitle span{float: right; color: #fff;}
+.noUi-handle:before, .noUi-handle:after{display: none !important;}
+.box-pane{
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding:25px;
+    box-sizing: border-box;
+    min-height:570px;
+}
+
+#info-pane{
+    float:left;
+    width:35%;
+}
+
+#graph-pane{
+    float:right;
+    width:63%;
+}
+
+.heading-title{
+    font-size:1.35em;
+    margin-bottom:15px;
+}
+
+#repayment-total{
+    float:left;
+    width:48%;
+}
+
+#repayment-cycle{
+    width:48%;
+    float:right;
+    text-align:right;
+}
+
+.row-input{
+}
+
+.row-input label{
+    padding:5px 0;
+    display:block;
+}
+
+.row-input input, .row-input select{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 9px 15px 10px;
+    outline: none;
+    border-radius:5px;
+    font-size:1em;
+}
+
+.input-wrap{
+    position:relative;
+}
+
+.currency-code{
+    position:absolute;
+    left:3px;
+    top:9px;
+}
+
+.percentage-code{
+    position:absolute;
+    left:75px;
+    top:9px;
+}
+
+.ul-buttons, .ul-buttons li{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.ul-buttons {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+/* .ul-buttons::before{content:""; width: 120%; height: 100%; position: absolute; background: #232734; z-index: 2; top: 0; left: 0;} */
+.ul-buttons li{
+    float:left;
+    background-color: #fff;
+    color: #000;
+    padding: 15px 21px; text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    width:100%;
+    float:left;
+    box-sizing: border-box;
+    text-align:left;
+    text-transform:uppercase;
+    font-family: GothamLight;
+    margin: 0 5px; position: relative; z-index: 10;
+
+}
+.ul-buttons li.compounded-btn span{ color: #000000; }
+
+
+.ul-buttons li span{ font-size: 25px;font-family: GothamBold;  }
+
+.ul-buttons li.selected{
+    background-color: #8FADD6;
+    color:#000;
+    font-weight: bold;
+}
+
+.note-text{
+    font-size:0.8em;
+    font-style:italic;
+    padding-top:5px;
+}
+
+.range-slider{
+    margin:15px 0 65px 0;
+}
+
+.noUi-value{
+    margin-top:4px;
+    font-size:1em;
+}
+
+.short-input{
+    width:60px;
+}
+
+.bold{
+    font-weight:normal;
+}
+
+.loan-value{
+    font-size:1.3em;
+    font-weight:normal;
+    margin-bottom: 20px;
+}
+
+.orange-text{
+    color: #f56a00;
+}
+
+#graph-chart{
+    width:100%;
+}
+
+.clear{
+    clear:both;
+}
+@media screen and (max-width: 1300px) {
+    #loan-container{display: inline-block; width: 90%; padding: 5%;}
+    /* .loancalc-outer .bottom-sec{width: 100%; margin-left: 0;} */
+    /* .loancalc-outer .bottom-sec{width: 100%; margin-left: -19%;} */
+/* .loancalc-outer .bottom-sec{width: 100%; margin-left: 0;} */
+/* #loan-container{width: 100%; padding: 15px; display: block;}
+.loancalc-outer .bottom-sec{display: block; width: 100%;}
+#graph-chart div{max-width: 100% !important;} */
+}
+
+@media screen and (max-width: 1020px) {
+   
+    #info-pane, #graph-pane{
+        float:none;
+        width:100%;
+        margin-bottom:20px;
+    }
+    
+    .box-pane{
+        min-height:500px;
+    }
+    .loancalc-outer .bottom-sec{margin-top: -180px;}
+    .loancalc-outer .left-sec{width: 110%;}
+    .ul-buttons li{font-size: 12px;}
+    /* .loancalc-outer .bottom-sec{display: none;} */
+    .loancalc-outer .left-sec{padding-right: 10px;}
+    .loancalc-outer .right-sec{padding-left: 50px;}
+    .loancalc-outer .right-sec::before{display: none;}
+}
+
+@media screen and (max-width: 765px) {
+    .loancalc-outer .top-cntsec{display: inline-block;}
+    .loancalc-outer .left-sec{width: 100%; padding: 15px 0;}
+    .loancalc-outer .right-sec{width: 100%; padding: 15px 0;}
+    .loancalc-outer .right-sec::before{display: none;}
+    #loan-container{width: 100%; padding: 15px; display: block;}
+    
+    .loancalc-outer .in-total::before{display: none;}
+ 
+    .loancalc-outer .max_width{max-width: 600px;}
+    .loancalc-outer .bottom-sec { margin-top: -150px;}
+    .loancalc-outer .title-sec h2{font-size: 18px;}
+.loancalc-outer{ padding: 15px 0 }
+    .ul-buttons li{margin: 5px 0;}
+    .range-slider {
+        margin: 30px 0;
+    }
+    .loancalc-outer .title-sec p {
+        font-size: 13px;
+        line-height: 1.7;
+        color: #fff;
+    }
+    .loancalc-outer .right-sec{ display: flex; }
+    .loancalc-outer .right-sec #your-investment{ margin-right: 50px; }
+    .loancalc-outer .labeltitle{font-size: 14px;}
+    .loan-value{font-size: 14px;}
+    .loancalc-outer .title-sec{padding-bottom: 0;}
+    .loancalc-outer .right-sec .labeltitle { margin-left: 0;}
+}
+@media screen and (max-width: 600px) {
+    .loancalc-outer .max_width{max-width: 500px;}
+}
+@media screen and (max-width: 500px) {
+    .loancalc-outer .max_width{max-width: 400px;}
+    .ul-buttons li{ padding:15px;font-size: 11px;}
+    .ul-buttons li span,
+    .loancalc-outer .in-total{ font-size: 15px;}
+}
+@media screen and (max-width: 400px) {
+    .loancalc-outer .max_width{max-width: 350px;}
+}
+@media screen and (max-width: 350px) {
+    .loancalc-outer .max_width{max-width: 300px;}
+}

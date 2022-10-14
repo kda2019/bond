@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en" class="is-loading">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Home | Bond Xchange</title>
+
+    <link rel="icon" type="image/png" href="https://bond-xchange.com/src/images/ico.png" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,500;1,700&amp;family=Open+Sans:ital,wght@0,400;0,600;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dist/vendor.min.css" />
+    <link rel="stylesheet" href="dist/app.min.css" />
+    <link rel="stylesheet" href="css/nouislider.css" />
+    <link rel="stylesheet" href="css/cal.css" />
+
+    <!-- Google Tag Manager -->
+
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-T9MTVW2");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+      // This script is explained line by line in depth in the following video:
+      // http://www.developphp.com/view.php?tid=1389
+      function computeLoan() {
+        var amount = document.getElementById("amount").value;
+        var interest = amount * (11.5 * 0.01);
+        var payment = (amount / 1 + interest * 5).toFixed(2);
+        payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById("payment").innerHTML =
+          "Total Returns = $" + payment;
+      }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lc4UswfAAAAAN0m8eNBJdVwjt-uhYRz09MBzBkU"></script>
+
+    <!-- <script>
+      function SubmitForm() {
+        showResultDiv();
+        document.forms["formInvestment"].action = "ajax.php";
+        document.forms["formInvestment"].target = "frame_result1";
+        document.forms["formInvestment"].submit();
+
+        document.forms["formInvestment"].action =
+          "https://dls-leads.lexatel.com/newLead.php";
+        document.forms["formInvestment"].target = "frame_result2";
+        document.forms["formInvestment"].submit();
+        return false;
+      }
+    </script> -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T9MTVW2"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!--  Clickcease.com tracking-->
+
+    <script type="text/javascript">
+      var script = document.createElement("script");
+      script.async = true;
+      script.type = "text/javascript";
+      var target = "https://www.clickcease.com/monitor/stat.js";
+      script.src = target;
+      var elem = document.head;
+      elem.appendChild(script);
+    </script>
+    <noscript
+      ><a href="https://www.clickcease.com" rel="nofollow"
+        ><img
+          src="https://monitor.clickcease.com/stats/stats.aspx"
+          alt="ClickCease" /></a
+    ></noscript>
+    <!--  Clickcease.com tracking-->
+    <style>
+      .section {
+        overflow: hidden;
+      }
+
+      .btn-primary,
+      .btn-form {
+        background-color: #004199 !important;
+        border: none !important;
+      }
+
+      .section-home__one .item__left,
+      .calculator-section,
+      .loancalc-outer .container-fluid,
+      .loancalc-outer,
+      #loan-container,
+      .item__icon,
+      .hero-strip {
+        background-color: #004199 !important;
+      }
+
+      /* .ul-buttons li.selected {
+        background-color: #004199 !important;
+      } */
+
+      .quarter-btn,
+      #quarterpayment_main {
+        color: rgb(0, 0, 0) !important;
+      }
+
+      .noUi-handle {
+        border: 1px solid #e1844c !important;
+        background: #e1844c !important;
+      }
+
+      .hero {
+        background-image: url(src/images/HERO.png) !important;
+      }
+
+      .title-heading-hero {
+        color: #000 !important;
+      }
+    </style>
+
+    <div id="loading" class="loading">
+      <div class="loading__ring"></div>
+    </div>
+    <div class="section" style="z-index: 15 !important">
+      <div class="row">
+        <div class="col-12" style="background-color: #fff; padding-top: 15px">
+          <a class="navbar-brand" href="index.html"
+            ><img
+              id="logo"
+              src="src/images/BX&#32;Logo.png"
+              alt="logo"
+              class="img-fluid"
+              style="margin: 10px 10px 10px 40px; align-self: flex-start"
+              width="150px"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-home">
+      <nav class="navbar navbar--top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"
+            ><img
+              id="logo"
+              src="src/images/logo-white.png"
+              alt="logo"
+              class="img-fluid"
+              width="300"
+          /></a>
+        </div>
+      </nav>
+    </div>
+    <div class="hero">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-12 justify-content-left">
+            <div class="hero__content">
+              <!-- <div style="text-align: left">
+                <a class="navbar-brand" href="/"
+                  ><img
+                    id="logo"
+                    src="src/images/logo.png"
+                    alt="logo"
+                    class="img-fluid"
+                    style="padding-top: 20px !important"
+                    width="500px"
+                /></a>
+              </div> -->
+              <h1
+                id="hero-heading"
+                class="hero__heading text-left desktop"
+                data-aos="fade-down"
+                style="
+                  font-size: 30px;
+                  margin-top: 150px !important;
+                  color: #000;
+                "
+              >
+                <span
+                  class="title-heading-hero"
+                  style="
+                    font-size: 48px;
+                    color: #000;
+                    padding: 0px 0px 20px 0px;
+                  "
+                  ><b
+                    >We are Australia's largest<br />
+                    growing financial comparison site.</b
+                  ></span
+                ><br />
+                <span class="title-heading-hero" style="font-size: 30px"
+                  ><br />
+                  We take on the hard work of selecting the right<br />
+                  investment for you.</span
+                >
+              </h1>
+              <h1
+                id="hero-heading"
+                class="hero__heading text-left mobile"
+                data-aos="fade-down"
+                style="font-size: 30px; margin-top: 10% !important; color: #000"
+              >
+                <span
+                  style="
+                    font-size: 34px;
+                    color: #000;
+                    padding: 0px 0px 20px 0px;
+                  "
+                  ><b
+                    >We are Australia's largest<br />
+                    growing financial comparison site.</b
+                  ></span
+                ><br />
+                <span style="font-size: 30px"
+                  ><br />
+                  We take on the hard work of selecting the right<br />
+                  investment for you.</span
+                >
+              </h1>
+            </div>
+          </div>
+          <div class="col-12 justify-content-center text-center">
+            <a
+              href="index.html#compare-form"
+              class="btn btn-primary hvr-fade mt-4"
+              style="margin-bottom: 150px"
+              >Find Market Rates Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="section hero-strip"
+      style="padding-top: 20px; padding-bottom: 10px"
+    >
+      <div class="row">
+        <div class="col-12 col-md-10 offset-md-1" style="margin-left: 12%">
+          <div class="row">
+            <div class="col-12 col-md-2">
+              <p style="font-size: 16px; color: #ffffff">◈ High Yield Funds</p>
+            </div>
+            <div class="col-12 col-md-2">
+              <p style="font-size: 16px; color: #ffffff">
+                ◈ Fixed Income Funds
+              </p>
+            </div>
+            <div class="col-12 col-md-3 desktop">
+              <p style="font-size: 16px; color: #ffffff; padding-left: 35px">
+                ◈ High Interest Investments
+              </p>
+            </div>
+            <div class="col-12 col-md-3 mobile">
+              <p style="font-size: 16px; color: #ffffff">
+                ◈ High Interest Investments
+              </p>
+            </div>
+            <div class="col-12 col-md-2">
+              <p style="font-size: 16px; color: #ffffff">◈ Fixed Rate Bonds</p>
+            </div>
+            <div class="col-12 col-md-3">
+              <p style="font-size: 16px; color: #ffffff">◈ Super Investments</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="section"
+      style="text-align: center; padding-top: 50px; padding-bottom: 20px"
+    >
+      <div class="container">
+        <h3>
+          According to your requirements we match you with the most suitable
+          regulated investment company who will, from over 1,000 products select
+          the one specific to your individual specifications.
+        </h3>
+      </div>
+    </div>
+    <div
+      class="section"
+      style="
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        font-size: 18px;
+      "
+    >
+      <div class="container">
+        <p>
+          Recognising a change in the financial services industry with
+          technology playing a key role, Bond Xchange was developed as a means
+          of enabling you to discover investment opportunities on any device, at
+          any time, across Australia, with just a few simple clicks.
+        </p>
+        <p>
+          Bond Xchange is an investment finding and comparison service tool. We
+          work with leading financial institutions to find and compare the
+          highest and safest fixed rate investments available. We only match you
+          with vetted providers offering a secure investment opportunity.
+        </p>
+        <p>
+          The information provided on our website is processed and introduced to
+          a regulated financial partner who will contact you directly with your
+          results.
+        </p>
+      </div>
+    </div>
+    <div
+      class="section"
+      style="
+        text-align: center;
+        padding-top: 30px;
+        font-size: 24px;
+        background-color: #f0f0f0;
+      "
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-9" style="padding-top: 30px">
+            <p>
+              Our investment finder service bridges the gap of uncertainty by
+              finding you the best fixed income opportunities from over 1,000
+              products - helping you choose the right investment for you.
+            </p>
+          </div>
+          <div class="col-12 col-lg-3">
+            <img
+              src="src/images/hand-phone.png"
+              width="250px"
+              alt="hand-phone"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-home__one" style="background-color: #ffffff">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <h2
+              class="section__heading text-center"
+              data-aos="fade-down"
+              data-aos-duration="600"
+              style="font-size: 26px"
+            >
+              Our range of portfolio opportunities spanning various sectors
+              offer high performing and safe fixed rate investments up to 10%
+              p.a.
+            </h2>
+          </div>
+        </div>
+        <div
+          class="row row-items justify-content-center"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-duration="600"
+        >
+          <div class="col-12 col-sm-6 ol-md-3">
+            <div class="item">
+              <div class="item__left">
+                <img
+                  src="src/images/hand.png"
+                  alt="item5"
+                  class="img-fluid"
+                  width="55"
+                />
+              </div>
+              <div class="item__right">Fund Investments</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 ol-md-3">
+            <div class="item">
+              <div class="item__left">
+                <img
+                  src="src/images/leaf.png"
+                  alt="item1"
+                  class="img-fluid"
+                  width="50"
+                />
+              </div>
+              <div class="item__right">Managed Trading Accounts</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 ol-md-3">
+            <div class="item">
+              <div class="item__left">
+                <img
+                  src="src/images/life-insurance.png"
+                  alt="item3"
+                  class="img-fluid"
+                  width="40"
+                />
+              </div>
+              <div class="item__right">Listed ASX Bonds</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 ol-md-3">
+            <div class="item">
+              <div class="item__left">
+                <img
+                  src="src/images/security-lock.png"
+                  alt="item4"
+                  class="img-fluid"
+                  width="40"
+                />
+              </div>
+              <div class="item__right">Long Term Deposits</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 ol-md-3">
+            <div class="item">
+              <div class="item__left">
+                <img
+                  src="src/images/arrow.png"
+                  alt="item4"
+                  class="img-fluid"
+                  width="55"
+                />
+              </div>
+              <div class="item__right">Corporate Bonds & Funds</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 ol-md-3">
+            <div class="item">
+              <div class="item__left">
+                <img
+                  src="src/images/saving.png"
+                  alt="item5"
+                  class="img-fluid"
+                  width="45"
+                />
+              </div>
+              <div class="item__right">Exchange Traded Funds</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-12 justify-content-center text-center"
+            style="padding-top: 50px"
+          >
+            <a href="index.html#compare-form" class="btn btn-primary">Compare Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section calculator-section">
+      <div
+        class="container about_div bg_color pad_50"
+        id="aboutus"
+        style="max-width: 1600px"
+      >
+        <div class="row">
+          <div class="col-12 col-md-7" style="padding-right: 0px">
+            <div class="loancalc-outer">
+              <div class="max_width">
+                <div class="container-fluid">
+                  <div id="loan-container" style="padding-left: 15px">
+                    <div class="title-sec">
+                      <!--<h2>Secure Calculation </h2>-->
+                      <h2
+                        style="
+                          font-size: 30px;
+                          font-family: leaguespartan !important;
+                        "
+                      >
+                        Estimated Returns Calculator
+                      </h2>
+                      <p>
+                        Use our simple calculator below to see what our best
+                        rate provider could offer you today.
+                      </p>
+                    </div>
+                    <div class="top-cntsec">
+                      <div class="left-sec">
+                        <div class="row-input">
+                          <label class="labeltitle"
+                            >Your Investment <span id="label-investment"></span
+                          ></label>
+                          <div class="input-wrap">
+                            <!--<div class="currency-code">$</div>
+                            <input type="text" type="number" id="txtLoan" value="1000000"/>''-->
+                            <div
+                              id="investmentRange"
+                              class="range-slider"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="row-input">
+                          <label class="labeltitle"
+                            >Term <span id="label-year"></span
+                          ></label>
+                          <div id="yearRange" class="range-slider"></div>
+                        </div>
+                      </div>
+                      <div class="right-sec">
+                        <div id="your-investment">
+                          <label class="labeltitle">Your Investment</label>
+                          <div id="repayment-total-value" class="loan-value">
+                            <span class="in-total" id="investment-total"
+                              >0</span
+                            >
+                            AUD$
+                          </div>
+                        </div>
+                        <div id="term-investment">
+                          <label class="labeltitle">Term</label>
+                          <div id="repayment-total-value" class="loan-value">
+                            <span class="in-total" id="term-total">0</span>
+                          </div>
+                        </div>
+                        <!-- <div id="return-total">
+                        <label class="labeltitle">Your Returns</label>
+                        <div id="return-total-value" class="loan-value">
+                            <span class="in-total" id="return-value">0</span> AED
+                        </div>
+                    </div>  -->
+                      </div>
+                    </div>
+                    <div class="row-input">
+                      <ul class="ul-buttons">
+                        <li
+                          class="selected quarter-btn"
+                          style="font-size: 12px"
+                          data-value="1"
+                        >
+                          TOTAL YIELD GAINED<span
+                            id="quarterpayment_main"
+                            style="display: block; font-size: 22px"
+                          ></span>
+                        </li>
+                        <li
+                          class="compounded-btn"
+                          style="font-size: 12px"
+                          data-value="2"
+                        >
+                          TOTAL RETURNS<span
+                            id="compoundpayment_main"
+                            style="display: block; font-size: 22px"
+                          ></span>
+                        </li>
+                      </ul>
+                      <p style="font-size: 14px; padding-top: 15px">
+                        *Return Calculated to the maximum 10% rate of return
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-md-5 form_box"
+            style="padding: 50px 30px 50px 0"
+          >
+            <form
+              id="formInvestment2"
+              class="form form--investment"
+              action="/api/send_form_data"
+              method="post"
+              name="formInvestment2"
+            >
+              <h2 class="form__title">
+                Find Australia's best performing high yield investment rates.
+              </h2>
+              <p class="text-center">
+                Fill in our form below to compare today.
+              </p>
+              <div class="form-group">
+                <input type="hidden" name="ipAddress" id="ipFormInput2" />
+                <input
+                  type="text"
+                  class="form-control form_name"
+                  name="firstname"
+                  placeholder="First Name"
+                  style="
+                    width: 48.4%;
+                    display: inline-block;
+                    margin-right: 1% !important;
+                  "
+                  required
+                />
+
+                <input
+                  type="text"
+                  class="form-control form_name"
+                  name="lastname"
+                  placeholder="Last Name"
+                  style="
+                    width: 48.4%;
+                    display: inline-block;
+                    margin-left: 1% !important;
+                  "
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <select
+                  id="country_code"
+                  name="country_code"
+                  class="form-control"
+                  required
+                >
+                  <option value="" disabled>Country Code</option>
+                  <option value="+61" selected>Australia (+61)</option>
+                  <option value="+64">New Zealand (+64)</option>
+                </select>
+
+                <input
+                  id="phone"
+                  type="tel"
+                  class="form-control"
+                  name="phone"
+                  placeholder="Phone Number"
+                  oninput="process(event)"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  id="email"
+                  type="email"
+                  class="form-control required d8val_email"
+                  name="email"
+                  placeholder="Email Address"
+                  d8validationlevel="address"
+                  oninput="validation(event)"
+                  required
+                />
+              </div>
+              <div class="form-group form-select">
+                <select name="country_region" class="form-control" required>
+                  <option value="" disabled selected>
+                    What state are you in?
+                  </option>
+                  <optgroup label="Australia">
+                    <option value="Australian Capital Territory (ACT)">
+                      Australian Capital Territory (ACT)
+                    </option>
+                    <option value="New South Wales (NSW)">
+                      New South Wales (NSW)
+                    </option>
+                    <option value="Northern Territory (NT)">
+                      Northern Territory (NT)
+                    </option>
+                    <option value="Queensland (QLD)">Queensland (QLD)</option>
+                    <option value="South Australia (SA)">
+                      South Australia (SA)
+                    </option>
+                    <option value="Tasmania (TAS)">Tasmania (TAS)</option>
+                    <option value="Victoria (VIC)">Victoria (VIC)</option>
+                    <option value="Western Australia (WA)">
+                      Western Australia (WA)
+                    </option>
+                  </optgroup>
+                  <optgroup label="New Zealand">
+                    <option value="NZ">New Zealand (NZ)</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="form-group form-select">
+                <select name="investment_amount" class="form-control" required>
+                  <option value="" disabled selected>Investment Amount</option>
+                  <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                  <option value="$25,000 - $50,000">$25,000 - $50,000</option>
+                  <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                  <option value="$100,000 - $250,000">
+                    $100,000 - $250,000
+                  </option>
+                  <option value="$250,000+">$250,000+</option>
+                </select>
+              </div>
+              <div class="form-group form-select">
+                <select name="ideal_returns" class="form-control" required>
+                  <option value="" disabled selected>
+                    Desired Investment Return
+                  </option>
+                  <option value="1-3%">1-3%</option>
+                  <option value="3-6%">3-6%</option>
+                  <option value="6-9%">6-9%</option>
+                  <option value="9%+">9%+</option>
+                </select>
+              </div>
+              <div class="form-check">
+                <div class="row">
+                  <div class="col-12 col-sm-1">
+                    <input type="checkbox" id="agree1" name="agree1" required />
+                  </div>
+                  <div class="col-12 col-sm-11">
+                    <label for="agree1"
+                      >I agree to the terms & conditions, privacy policy and
+                      being contacted by our partner provider</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="action mt-4">
+                <input
+                  id="submit"
+                  type="submit"
+                  name="submit"
+                  class="btn btn-form"
+                  data-sitekey="6Lc4UswfAAAAAN0m8eNBJdVwjt-uhYRz09MBzBkU"
+                  data-callback="onSubmit"
+                  data-action="submit"
+                  value="Compare Now"
+                />
+              </div>
+            </form>
+            <script>
+              function onClick(e) {
+                e.preventDefault();
+                grecaptcha.ready(function () {
+                  grecaptcha
+                    .execute("6Lc4UswfAAAAAN0m8eNBJdVwjt-uhYRz09MBzBkU", {
+                      action: "submit",
+                    })
+                    .then(function (token) {
+                      // Add your logic to submit to your backend server here.
+                    });
+                });
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Why" class="section-home__two">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2
+              class="section__heading text-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="600"
+            >
+              Why use Bond Xchange?
+            </h2>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 col-md-6">
+            <div class="item" data-aos="fade-left" data-aos-duration="600">
+              <div class="item__icon-wrap">
+                <div class="item__icon"></div>
+              </div>
+              <div class="item__content">
+                <h3 class="item__heading">How it works</h3>
+                <p>
+                  We work with leading financial institutions to compare and
+                  find you the best investment rates.
+                </p>
+                <p>
+                  We offer this service free of charge and without
+                  obligation.<br />
+                  The information provided is passed on to one of our partners
+                  who will contact you directly about your investment enquiry.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="item" data-aos="fade-right" data-aos-duration="600">
+              <div class="item__icon-wrap">
+                <div class="item__icon"></div>
+              </div>
+              <div class="item__content">
+                <h3 class="item__heading">Security</h3>
+                <p>
+                  We match you with vetted providers offering secured
+                  opportunities.
+                </p>
+                <p>
+                  Investments are asset backed to ensure security over your
+                  investment and are authorised by the required authorities.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="item" data-aos="fade-left" data-aos-duration="600">
+              <div class="item__icon-wrap">
+                <div class="item__icon"></div>
+              </div>
+              <div class="item__content">
+                <h3 class="item__heading">Low Level Entry</h3>
+                <p>
+                  Find fixed income opportunities with entry levels as low as
+                  AUD$10,000.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="item" data-aos="fade-left" data-aos-duration="600">
+              <div class="item__icon-wrap">
+                <div class="item__icon"></div>
+              </div>
+              <div class="item__content">
+                <h3 class="item__heading">Flexible Terms</h3>
+                <p>
+                  Compare a wide range of flexible fixed rate investment terms
+                  from 1-10 years and receive returns on a monthly, quarterly or
+                  yearly basis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <img
+          src="src/images/Fixed_income.png"
+          width="100%"
+          alt="Fixed_income"
+        />
+      </div>
+    </div>
+    <div class="section" style="padding-top: 20px; padding-bottom: 50px">
+      <div class="container">
+        <h2
+          class="section__heading text-center"
+          data-aos="fade-down"
+          data-aos-duration="600"
+          style="font-size: 26px"
+        >
+          60% of Australian's are unsure or have no correct information on the
+          best investment vehicle. Bond Xchange aims to bridge that gap of
+          uncertainty.
+        </h2>
+        <br />
+        <h2
+          class="section__heading text-center"
+          data-aos="fade-down"
+          data-aos-duration="600"
+          style="font-size: 26px"
+        >
+          Follow our simple steps below to see just how hard your money can work
+          for you in a secure and safe investment opportunity.
+        </h2>
+        <br />
+        <h2
+          class="section__heading text-center"
+          data-aos="fade-down"
+          data-aos-duration="600"
+          style="font-size: 26px"
+        >
+          Its free and no obligation to proceed.
+        </h2>
+      </div>
+    </div>
+
+    <div id="compare-form" class="section-home__three">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 col-form">
+            <div data-aos="fade-left" data-aos-duration="600">
+              <form
+                id="formInvestment"
+                class="form form--investment"
+                action="https://bond-xchange.com/ajax.php"
+                method="post"
+                name="formInvestment"
+                oninput="process2(event)"
+              >
+                <input type="hidden" name="ipAddress" id="ipFormInput" />
+                <input type="hidden" name="token" value="D89pouQ5jb3DjFrZZT" />
+                <input
+                  type="hidden"
+                  name="campaign"
+                  value="investment-finder"
+                />
+                <h2 class="form__title">
+                  Search the Australian markets best performing high yield
+                  investment rates
+                </h2>
+                <p class="text-center">
+                  Fill in our form below to enquire today.
+                </p>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="firstname"
+                    placeholder="First Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="lastname"
+                    placeholder="Last Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <select
+                    id="country_code2"
+                    name="country_code2"
+                    class="form-control"
+                    required
+                  >
+                    <option value="" disabled>Country Code</option>
+                    <option value="+61" selected>Australia (+61)</option>
+                    <option value="+64">New Zealand (+64)</option>
+                  </select>
+
+                  <input
+                    id="phone2"
+                    type="tel"
+                    class="form-control"
+                    name="phone"
+                    placeholder="Phone Number"
+                    oninput="process(event)"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    id="email2"
+                    type="email"
+                    class="form-control required d8val_email"
+                    name="email"
+                    placeholder="Email Address"
+                    d8validationlevel="address"
+                    oninput="validation2(event)"
+                    required
+                  />
+                </div>
+                <div class="form-group form-select">
+                  <select name="country_region" class="form-control" required>
+                    <option value="" disabled selected>
+                      What state are you in?
+                    </option>
+                    <optgroup label="Australia">
+                      <option value="Australian Capital Territory (ACT)">
+                        Australian Capital Territory (ACT)
+                      </option>
+                      <option value="New South Wales (NSW)">
+                        New South Wales (NSW)
+                      </option>
+                      <option value="Northern Territory (NT)">
+                        Northern Territory (NT)
+                      </option>
+                      <option value="Queensland (QLD)">Queensland (QLD)</option>
+                      <option value="South Australia (SA)">
+                        South Australia (SA)
+                      </option>
+                      <option value="Tasmania (TAS)">Tasmania (TAS)</option>
+                      <option value="Victoria (VIC)">Victoria (VIC)</option>
+                      <option value="Western Australia (WA)">
+                        Western Australia (WA)
+                      </option>
+                    </optgroup>
+                    <optgroup label="New Zealand">
+                      <option value="NZ">New Zealand (NZ)</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div class="form-group form-select">
+                  <select
+                    name="investment_amount"
+                    class="form-control"
+                    required
+                  >
+                    <option value="" disabled selected>
+                      Investment Amount
+                    </option>
+                    <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                    <option value="$25,000 - $50,000">$25,000 - $50,000</option>
+                    <option value="$50,000 - $100,000">
+                      $50,000 - $100,000
+                    </option>
+                    <option value="$100,000 - $250,000">
+                      $100,000 - $250,000
+                    </option>
+                    <option value="$250,000+">$250,000+</option>
+                  </select>
+                </div>
+                <!-- <div class="form-group form-select">
+                  <select name="looking_for" class="form-control" required>
+                    <option value="" disabled selected>
+                      What are you looking for?
+                    </option>
+                    <option value="Fund Investments">Fund Investments</option>
+                    <option value="Managed Trading Accounts">
+                      Managed Trading Accounts
+                    </option>
+                    <option value="Listed ASX Bonds">Listed ASX Bonds</option>
+                    <option value="Long Term Deposits">
+                      Long Term Deposits
+                    </option>
+                    <option value="Corporate Bonds &amp; Funds">
+                      Corporate Bonds & Funds
+                    </option>
+                    <option value="Exchange Traded Funds">
+                      Exchange Traded Funds
+                    </option>
+                  </select>
+                </div> -->
+                <div class="form-group form-select">
+                  <select name="ideal_returns" class="form-control" required>
+                    <option value="" disabled selected>
+                      Desired Investment Return
+                    </option>
+                    <option value="1-3%">1-3%</option>
+                    <option value="3-6%">3-6%</option>
+                    <option value="6-9%">6-9%</option>
+                    <option value="9%+">9%+</option>
+                  </select>
+                </div>
+                <div class="form-check">
+                  <div class="row">
+                    <div class="col-12 col-sm-1">
+                      <input type="checkbox" id="agree" name="agree" required />
+                    </div>
+                    <div class="col-12 col-sm-11">
+                      <label for="agree"
+                        >I agree to the terms & conditions, privacy policy and
+                        being contacted by our partner provider</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="action mt-4">
+                  <input
+                    id="submit2"
+                    type="submit"
+                    name="submit"
+                    class="btn btn-form"
+                    data-sitekey="6Lc4UswfAAAAAN0m8eNBJdVwjt-uhYRz09MBzBkU"
+                    data-callback="onSubmit"
+                    data-action="submit"
+                    value="Enquire Today"
+                  />
+                </div>
+              </form>
+              <script>
+                function onClick(e) {
+                  e.preventDefault();
+                  grecaptcha.ready(function () {
+                    grecaptcha
+                      .execute("6Lc4UswfAAAAAN0m8eNBJdVwjt-uhYRz09MBzBkU", {
+                        action: "submit",
+                      })
+                      .then(function (token) {
+                        // Add your logic to submit to your backend server here.
+                      });
+                  });
+                }
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      .footer p {
+        font-size: 13px;
+      }
+
+      .vertical-center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+    </style>
+    <style>
+      .footer p {
+        font-size: 13px;
+      }
+    </style>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- <div class="col-12 col-lg-3">
+            <h2 class="footer__heading">Contact Us</h2>
+            <p>info@investment-finder.com.au</p>
+          </div> -->
+          <div class="col-12 col-lg-12">
+            <h2 class="footer__heading">Risk Warning</h2>
+            <p>
+              Investing involves risk, including the possible loss of principal.
+              Please remember that financial investments may rise or fall and
+              past performance does not guarantee future performance in respect
+              of income or capital growth; you may not get back the amount you
+              invested. Your capital is at risk.
+            </p>
+            <p>
+              The content of this promotion is not authorised by any regulator
+              and does not constitute as financial advice.<br />
+              Reliance on the promotion alone for the purpose of engaging in any
+              investment activity may expose an individual to significant risk.
+              You are strongly advised to consult a professional regulated
+              financial adviser before making any investment decisions.
+            </p>
+            <p>
+              This website is a paid promotion and is run as a marketing
+              website.
+            </p>
+            <p>
+              We pass the information provided by you in the online forms to
+              relevant third parties who will contact you in relation to their
+              investment products. We are not authorised to give advice and we
+              are not liable for any financial advice provided by or obtained
+              through a third party.
+            </p>
+            <p>THIS WEBSITE AND ITS CONTENTS IS NOT INVESTMENT ADVICE</p>
+            <br />
+            <h2 class="footer__heading">Fees</h2>
+            <p>
+              We offer a marketing service and charge no fees to use our
+              service. We are paid an introduction fee from our partners if you
+              choose to invest – which you are under no condition to do.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <p class="mb-0">
+              © Copyright 2022 Bond Xchange |
+              <a href="Privacy-Policy.html" style="color: #fff !important"
+                >Privacy Policy</a
+              >
+              |
+              <a href="Terms-and-conditions.html" style="color: #fff !important"
+                >Terms & Conditions</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // email validation
+
+      // <!--FORM 1 #formInvestment2-->
+
+      function validation(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const verify = document.querySelector("#email");
+        const form = document.getElementById("formInvestment2");
+
+        const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if (email.match(pattern)) {
+          fetch(
+            `https://ultimatecorsproxy.herokuapp.com/https://api.kickbox.com/v2/verify?email=${email}&apikey=live_750872c92d526c4da1d6128b3b0cf259c01643ef8fa9a3d7c1638cec1a6f5a2a`
+          )
+            .then((response) => {
+              return response.json();
+            })
+            .then((responseData) => {
+              if (responseData.result !== "undeliverable") {
+                verify.classList.remove("red");
+                verify.classList.add("green");
+                form.classList.add("email-good");
+                console.log(responseData);
+                console.log(responseData.result);
+
+                if (
+                  form.classList.contains("phone-good") &&
+                  form.classList.contains("email-good")
+                ) {
+                  document.getElementById("submit").disabled = false;
+                }
+              } else {
+                document.getElementById("submit").disabled = true;
+
+                verify.classList.remove("green");
+                verify.classList.add("red");
+                form.classList.remove("email-good");
+                console.log(responseData);
+                console.log(responseData.result);
+              }
+            });
+        } else {
+          document.getElementById("submit").disabled = true;
+
+          verify.classList.remove("green");
+          verify.classList.add("red");
+        }
+      }
+
+      // <!--FORM 2 #formInvestment-->
+
+      function validation2(event) {
+        event.preventDefault();
+
+        const email2 = document.getElementById("email2").value;
+        const verify2 = document.querySelector("#email2");
+        const form2 = document.getElementById("formInvestment");
+
+        const pattern2 = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if (email2.match(pattern2)) {
+          fetch(
+            `https://ultimatecorsproxy.herokuapp.com/https://api.kickbox.com/v2/verify?email=${email2}&apikey=live_750872c92d526c4da1d6128b3b0cf259c01643ef8fa9a3d7c1638cec1a6f5a2a`
+          )
+            .then((response) => {
+              return response.json();
+            })
+            .then((responseData) => {
+              if (responseData.result !== "undeliverable") {
+                verify2.classList.remove("red");
+                verify2.classList.add("green");
+                form2.classList.add("email-good");
+                console.log(responseData);
+                console.log(responseData.result);
+
+                if (
+                  form2.classList.contains("phone-good") &&
+                  form2.classList.contains("email-good")
+                ) {
+                  document.getElementById("submit2").disabled = false;
+                }
+              } else {
+                document.getElementById("submit2").disabled = true;
+
+                verify2.classList.remove("green");
+                verify2.classList.add("red");
+                form2.classList.remove("email-good");
+                console.log(responseData);
+                console.log(responseData.result);
+              }
+            });
+        } else {
+          document.getElementById("submit2").disabled = true;
+
+          verify2.classList.remove("green");
+          verify2.classList.add("red");
+        }
+      }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="dist/vendor.min.js%3Fv=1603995702"></script>
+
+    <script src="dist/app.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://webservices.data-8.co.uk/javascript/loader.ashx?key=36KZ-WSR3-XK6G-5ASY&load=PhoneValidation,EmailValidation"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://webservices.data-8.co.uk/javascript/jqueryvalidation_min.js"
+    ></script>
+
+    <!-- <script src="js/all.js"></script> -->
+
+    <script src="js/slick.min.js"></script>
+    <script src="js/nouislider.js"></script>
+    <script src="js/highcharts.js"></script>
+    <input
+      type="hidden"
+      name="hd_investment"
+      id="hd_investment"
+      value="100000"
+    />
+    <input type="hidden" name="hd_tenure" id="hd_tenure" value="15" />
+    <input
+      type="hidden"
+      name="hd_investmentTerm"
+      id="hd_investmentTerm"
+      value="quarter"
+    />
+    <script src="js/calculator.js"></script>
+  </body>
+</html>

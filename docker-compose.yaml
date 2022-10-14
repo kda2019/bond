@@ -1,0 +1,22 @@
+version: '3.8'
+
+
+services:
+  web:
+    build: ./app
+    expose:
+      - 8000
+  nginx:
+    build: ./nginx
+    ports:
+      - "1337:80"
+      - "443:443"
+    restart: always
+    depends_on:
+      - web
+    volumes:
+      - ./certbot/www:/var/www/certbot/:ro
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
