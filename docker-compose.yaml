@@ -11,25 +11,20 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    restart: always
+    restart: unless-stopped
     depends_on:
       - web
-    networks:
-      nginx_net:
     volumes:
-      - ./certbot/www:/var/www/certbot/:ro
-      - ./data/certbot/conf:/etc/letsencrypt
+      - web-root:/var/www/html
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
   certbot:
-    container_name: certbot
-    image: certbot/certbot:latest
-    networks:
-      nginx_net:
-    volumes:
-      - ./certbot/www/:/var/www/certbot/:rw
-      - ./data/certbot/conf:/etc/letsencrypt
-    restart: unless-stopped
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-
-networks:
-  nginx_net:
-    name: nginx_net
+      image: certbot/certbot
+      container_name: certbot
+      volumes:
+        - certbot-etc:/etc/letsencrypt
+        - certbot-var:/var/lib/letsencrypt
+        - web-root:/var/www/html
+      depends_on:
+        - webserver
+      command: certonly --webroot --webroot-path=/var/www/html --email sammy@example.com --agree-tos --no-eff-email --staging -d bonds2022.com  -d canberra2022.com
