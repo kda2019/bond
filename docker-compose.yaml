@@ -28,3 +28,14 @@ services:
       depends_on:
         - nginx
       command: certonly --webroot --webroot-path=/var/www/html --email sammy@example.com --agree-tos --no-eff-email --staging -d bonds2022.com  -d canberra2022.com
+
+
+volumes:
+  certbot-etc:
+  certbot-var:
+  web-root:
+    driver: local
+    driver_opts:
+      type: none
+      device: /root/project/views/
+      o: bind
