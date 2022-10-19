@@ -18,6 +18,7 @@ services:
       - ./nginx-conf:/etc/nginx/conf.d
       - ./certbot-etc:/etc/letsencrypt
       - ./certbot-var:/var/lib/letsencrypt
+      - ./dhparam:/etc/ssl/certs
   certbot:
     image: certbot/certbot
     container_name: certbot
