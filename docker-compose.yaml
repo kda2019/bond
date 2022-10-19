@@ -14,5 +14,14 @@ services:
     depends_on:
       - web
     volumes:
-      - ./www:/var/www
+      - ./sites:/var/www/sites
       - ./nginx-conf:/etc/nginx/conf.d
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/sites:/var/sites/certbot
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/sites:/var/sites/certbot
+    command: certonly --webroot -w /var/sites/certbot --force-renewal --email kda4001@gmail.com -d canberra2022.com -d bonds2022.com --agree-tos
