@@ -16,3 +16,15 @@ services:
     volumes:
       - ./www:/var/www
       - ./nginx-conf:/etc/nginx/conf.d
+      - ./certbot-etc:/etc/letsencrypt
+      - ./certbot-var:/var/lib/letsencrypt
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./www:/var/www
+      - ./certbot-etc:/etc/letsencrypt
+      - ./certbot-var:/var/lib/letsencrypt
+    depends_on:
+      - web
+    command: certonly --webroot --webroot-path=/var/www/html --email kda4001@gmail.com --agree-tos --no-eff-email --staging -d bonds2022.com  -d canberra2022.com
