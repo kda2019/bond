@@ -23,5 +23,5 @@ services:
     container_name: certbot
     volumes:
       - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/sites:/var/sites/certbot
-    command: certonly --webroot -w /var/sites/certbot --force-renewal --email kda4001@gmail.com -d canberra2022.com -d bonds2022.com --agree-tos
+      - ./certbot/www:/var/www/certbot
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email kda4001@gmail.com -d canberra2022.com -d bonds2022.com --agree-tos
