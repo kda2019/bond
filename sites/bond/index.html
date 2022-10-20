@@ -32,21 +32,7 @@
     <link rel="stylesheet" href="css/nouislider.css" />
     <link rel="stylesheet" href="css/cal.css" />
 
-    <!-- Google Tag Manager -->
 
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-T9MTVW2");
-    </script>
-    <!-- End Google Tag Manager -->
 
     <script>
       // This script is explained line by line in depth in the following video:
@@ -60,52 +46,8 @@
           "Total Returns = $" + payment;
       }
     </script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lc4UswfAAAAAN0m8eNBJdVwjt-uhYRz09MBzBkU"></script>
 
-    <!-- <script>
-      function SubmitForm() {
-        showResultDiv();
-        document.forms["formInvestment"].action = "ajax.php";
-        document.forms["formInvestment"].target = "frame_result1";
-        document.forms["formInvestment"].submit();
-
-        document.forms["formInvestment"].action =
-          "https://dls-leads.lexatel.com/newLead.php";
-        document.forms["formInvestment"].target = "frame_result2";
-        document.forms["formInvestment"].submit();
-        return false;
-      }
-    </script> -->
-  </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-T9MTVW2"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!--  Clickcease.com tracking-->
-
-    <script type="text/javascript">
-      var script = document.createElement("script");
-      script.async = true;
-      script.type = "text/javascript";
-      var target = "https://www.clickcease.com/monitor/stat.js";
-      script.src = target;
-      var elem = document.head;
-      elem.appendChild(script);
-    </script>
-    <noscript
-      ><a href="https://www.clickcease.com" rel="nofollow"
-        ><img
-          src="https://monitor.clickcease.com/stats/stats.aspx"
-          alt="ClickCease" /></a
-    ></noscript>
-    <!--  Clickcease.com tracking-->
     <style>
       .section {
         overflow: hidden;
@@ -1075,20 +1017,6 @@
                   />
                 </div>
               </form>
-              <script>
-                function onClick(e) {
-                  e.preventDefault();
-                  grecaptcha.ready(function () {
-                    grecaptcha
-                      .execute("6Lc4UswfAAAAAN0m8eNBJdVwjt-uhYRz09MBzBkU", {
-                        action: "submit",
-                      })
-                      .then(function (token) {
-                        // Add your logic to submit to your backend server here.
-                      });
-                  });
-                }
-              </script>
             </div>
           </div>
         </div>
